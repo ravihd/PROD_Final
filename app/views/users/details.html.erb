@@ -1,0 +1,21 @@
+<h1>Listing all users ...</h1>
+
+<table>
+    <tr>
+        <th>Useranme</th>
+        <th>Email</th>
+        <th>Password</th>
+        
+    </tr>
+    
+    <% @usedetials.each do |details| %>
+    <tr>
+        <td><%=details.username%></td>
+        <td><%=details.email%></td>
+        <td><%=details.password%></td>
+    </tr>
+    
+    <% end %>
+    
+    
+</table>

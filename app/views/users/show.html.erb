@@ -1,0 +1,11 @@
+<h1 style="color:orange">Showing article</h1>
+
+<p style="color:blue"><b  style="color:black">UserName :</b> <%=@userdetials.username%></p>
+<p style="color:blue"><b  style="color:black">Email    : </b><%=@userdetials.email%></p>
+<p style="color:blue"><b  style="color:black">Password : </b><%=@userdetials.password%></p>
+
+<%= link_to "Back to User List" , users_path%> |
+<%= link_to "Edit details" , edit_user_path(@userdetials)%>
+
+
+

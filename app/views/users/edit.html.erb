@@ -1,0 +1,62 @@
+<h1 align="center"> Edit existing Record</h1>
+
+
+<% if @userdetials.errors.any? %>
+    <ul>
+
+    <% @userdetials.errors.full_messages.each do |msg| %>
+       <b><b style="color:red"> <%= msg%> </b></b>
+    <%end%>
+    
+    </ul>
+    
+<%end%>
+
+
+<div class="row">
+    <div class="cls-xs-12">
+
+        <%= form_for(@userdetials, :html => {class: "form-horizontal", role: "form"}) do |u| %>
+        <div class="form-group">
+            <div class="col-sm-2">
+                 <%= u.label :user_name %>
+            </div>
+            <div class="col-sm-10">
+                 <%= u.text_field :username, class: "form-control", placeholder: "User Name"%>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <div class="col-sm-2">
+                 <%= u.label :email %>
+            </div>
+            <div class="col-sm-10">
+                 <%= u.text_field :email, class: "form-control", placeholder: "Email"%>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-2">
+                 <%= u.label :password %>
+            </div>
+            <div class="col-sm-10">
+                  <%= u.text_field :password, class: "form-control", id: "inputPassword3", placeholder: "Password"%>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+                  <%= u.submit class: "btn btn-primary" %>  
+            </div>
+        </div>
+  
+        <% end %>
+        
+        <div class="col-sm-onset-3 col-sm-10">
+            [<%= link_to "Cancel and back to User List" , users_path%>]
+        </end>
+        
+    </div>
+      
+    </div>
+</div>
