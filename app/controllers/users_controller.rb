@@ -6,22 +6,17 @@ class UsersController < ApplicationController
     def index
         @userdetials = User.all
     end
+    
     def signup
-        
     end
     
     def signin
-        
     end
     
     def home 
-        
     end
     
-    # def details
-    #     @userdetials = User.all
-        
-    # end
+
     
     def new
         @userdetials = User.new
@@ -29,22 +24,18 @@ class UsersController < ApplicationController
     
     def edit
         set_user
-        
     end
 
     def show
        set_user
-       
     end
     
     def update
        set_user
-       
-        
         if @userdetials.update(user_params)
-        flash[:notice] = "updated  successfully.."
-        redirect_to user_path(@userdetials)
-        # <%= "Hello"%>
+            flash[:success] = "updated  successfully.."
+            redirect_to user_path(@userdetials)
+       
         else
             render 'edit'
         end
@@ -52,35 +43,23 @@ class UsersController < ApplicationController
     
     def create
         @userdetials=User.new(user_params)
-        if @userdetials.save
-        flash[:notice] = "Saved data successfully.."
-        redirect_to user_path(@userdetials)
-        # <%= "Hello"%>
-        else
-            
-         
-        #flash[:notice] = @userdetials.errors.full_messages
-         render 'new'
-         
-         
-        end
-        
-       
+            if @userdetials.save
+                flash[:success] = "Data has been saved succefully."
+                redirect_to user_path(@userdetials)
+            else
+            flash[:danger] = @userdetials.errors.full_messages
+             render 'new'
+            end
     end
     
     def destroy 
          set_user
-         
-        
-        if @userdetials.destroy
-        flash[:notice] = "deleted  successfully.."
-        redirect_to users_path
-        # <%= "Hello"%>
-        else
-            render 'show'
-        end
-        
-        
+            if @userdetials.destroy
+                flash[:danger] = "deleted  successfully.."
+                redirect_to users_path
+            else
+                render 'show'
+            end
     end
 
     

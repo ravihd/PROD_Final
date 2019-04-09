@@ -1,17 +1,5 @@
 <h1 align="center"> Edit existing Record</h1>
-
-
-<% if @userdetials.errors.any? %>
-    <ul>
-
-    <% @userdetials.errors.full_messages.each do |msg| %>
-       <b><b style="color:red"> <%= msg%> </b></b>
-    <%end%>
-    
-    </ul>
-    
-<%end%>
-
+<%= render 'shared/errors', obj: @userdetials%>
 
 <div class="row">
     <div class="cls-xs-12">

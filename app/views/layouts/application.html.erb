@@ -14,13 +14,7 @@
     <br>
     <br>
    <P> <%= render "layouts/navigation" %> </p>
-    <% flash.each do |name, msg|%>
-    
-    <ul>
-        <p style="color:blue"><b> <%= msg %></b> </p>
-    </ul>
-    
-    <%end%>
+         <%= render "layouts/messages"%>
     
     <div class="container">
     <%= yield %>
